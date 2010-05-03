@@ -51,12 +51,15 @@ body {
 }
 
 .article_created_at {
-  //clear: both;
   float: left;
-  //padding-right: 1em;
 }
 
 .article_read_later {
   float: right;
 }
 
+.footer {
+  padding-top: 2em;
+  color: #aaaaaa;
+  font-size: 0.75em;
+}

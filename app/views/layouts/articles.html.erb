@@ -10,10 +10,16 @@
   <%= javascript_include_tag 'instapaper/embed' %>
 </head>
 <body>
-
+<div class="header">
+<%= image_tag 'too_large_logo.jpg' %>
+</div>
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
+
+<div class="footer">
+&copy; 2010 theiropinion.org
+</div>
 
 </body>
 </html>
