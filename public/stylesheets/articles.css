@@ -1,0 +1,39 @@
+body {
+  color: black;
+  background-color: white;
+  font-family: sans-serif;
+  margin: 0.5em;
+  padding: 0px;
+}
+
+.article {
+  border-color: #cccccc;
+  border-width: 1px;
+  border-style: solid;
+  width: 25%;
+  padding: 0.5em;
+}
+
+
+.article_title {
+  //background-color: green;
+}
+
+.article_attribution {
+  color: #777777;
+  font-size: 0.75em;
+  padding-bottom: 0.50em;
+}
+
+.article_description {
+  font-family: serif;
+  font-size: 0.85em;
+}
+
+.article_metadata {
+  padding-top: 0.50em;
+  color: #777777;
+  font-size: 0.75em;
+}
+
+

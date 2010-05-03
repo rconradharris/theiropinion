@@ -1,0 +1,17 @@
+<h1>Articles</h1>
+<% @articles.each do |article| %>
+  <div class="article">
+    <div class="article_title"><%= article.title %></div>
+    <div class="article_attribution">
+
+      <%= article.author %> |
+      <%= article.source %> |
+      <%= article.published_at %>
+    </div>
+    <div class="article_description"><%= article.description %></div>
+    <div class="article_metadata">
+      <div class="article_created_at">submitted: <%= distance_of_time_in_words_to_now(article.created_at) %></div>
+    </div>
+  </div>
+<% end %>
+

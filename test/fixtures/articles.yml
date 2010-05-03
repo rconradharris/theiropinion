@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  url: "http://www.slate.com/toolbar.aspx?action=print&id=2252363"
+  title: "In Defense of Robert Rubin"
+  description: "Seldom does a Sunday pass of late without Frank Rich, the New
+  York Times columnist, taking a potshot at Robert Rubin. This past week he
+  took two. But I've been having a hard time understanding what Rich and
+  others who are angry at Rubin are angry about. Sometimes they claim he
+  blocked financial regulation when he served in the Clinton administration.
+  Sometimes they blame him for not preventing the troubles at Citigroup.
+  Sometimes they argue that he has too many disciples in the Obama
+  administration, or that he was overpaid, or—the dominant theme lately—that
+  he's not sorry enough for whatever it is he may have done wrong."
+  author: "Jacob Weisberg"
+  source: "Slate"
+  published_at: "2010-5-1"
+  submission_id: nil
+
+
