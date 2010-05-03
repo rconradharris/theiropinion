@@ -14,10 +14,19 @@ body {
   padding: 0.5em;
 }
 
-
 .article_title {
   //background-color: green;
 }
+
+.article_title a {
+  text-decoration: none; 
+  color: black;
+}
+
+.article_title a:hover {
+  text-decoration: underline; 
+}
+
 
 .article_attribution {
   color: #777777;
@@ -36,4 +45,18 @@ body {
   font-size: 0.75em;
 }
 
+.article_footer {
+  padding-bottom: 0.75em;
+
+}
+
+.article_created_at {
+  //clear: both;
+  float: left;
+  //padding-right: 1em;
+}
+
+.article_read_later {
+  float: right;
+}
 
