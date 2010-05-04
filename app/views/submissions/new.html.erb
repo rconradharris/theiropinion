@@ -1,0 +1,36 @@
+<% form_for(@submission) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :url, 'URL' %>
+    <span class="helptext">
+    (link to the "Print" version of the article, if possible)
+    </span>
+    <br />
+    <%= f.text_field :url, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :description, "Short Description" %>
+    <span class="helptext">
+     (100 words or less)
+    </span>
+    <br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :submitter, "Your Name" %>
+    <span class="helptext">
+     (if you want to be credited)
+    </span>
+    <br />
+
+    <%= f.text_field :submitter, :size => 42 %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
+

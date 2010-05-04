@@ -1,0 +1,20 @@
+<table>
+<thead>
+  <tr>
+    <td>Title</td>
+    <td>Submitter</td>
+    <td>Submitted</td>
+    <td>Status</td>
+  </tr>
+</thead>
+<% @submissions.each do |submission| %>
+  <tr>
+    <td><%= link_to submission.title, submission.url %></td>
+    <td><%= submission.submitter %></td>
+    <td><%= distance_of_time_in_words_to_now(submission.created_at) %> ago</td>
+    <td><%= link_to submission.status.capitalize,
+                    edit_submission_path(submission),
+                    :class => :action_link %></td>
+  </tr>
+<% end %>
+</table>

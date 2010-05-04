@@ -1,0 +1,15 @@
+<table>
+<thead>
+  <tr>
+    <td>Title</td>
+    <td>Approved</td>
+  </tr>
+</thead>
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= link_to article.title, article.url %></td>
+    <td><%= distance_of_time_in_words_to_now(article.created_at) %> ago</td>
+    <td><%= link_to "Edit for Post", edit_article_path(article), :class => :action_link %></td>
+  </tr>
+<% end %>
+</table>

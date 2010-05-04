@@ -1,0 +1,25 @@
+<% form_for(@submission) do |f| %>
+  <div class="submission_show">
+    <span class="submission_label">Title:</span><br />
+    <%= @submission.title %><br /><br />
+    <span class="submission_label">URL:</span><br />
+    <%= link_to @submission.url %><br /> <br />
+    <span class="submission_label">Description:</span><br />
+    <%= @submission.description %><br /> <br />
+    <span class="submission_label">Submitter:</span><br />
+    <%= @submission.submitter %><br /> <br />
+    <span class="submission_label">Submitted:</span><br />
+    <%= distance_of_time_in_words_to_now(@submission.created_at).capitalize %> ago <br /> <br />
+    <span class="submission_label">Method:</span><br />
+    <%= @submission.method.capitalize %><br /> <br />
+  </div>
+  
+  <% if @submission.status == 'undecided' %>
+    <%= f.submit "Approve" %>
+    <%= f.submit "Reject" %>
+  <% else %>
+    <span class="submission_label">Status:</span><br />
+    <%= @submission.status.capitalize %><br /><br />
+  <% end %>
+
+<% end %>

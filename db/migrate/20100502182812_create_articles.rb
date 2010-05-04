@@ -6,12 +6,14 @@ class CreateArticles < ActiveRecord::Migration
       t.text :description
       t.string :author
       t.string :source
-      t.date :published_at
-      t.boolean :hide, :null => false, :default => false
+      t.date :publication_date
+      # unposted, hidden, posted
+      t.string :status, :limit => 16, :null => false
       t.integer :submission_id
       t.timestamps
     end
     add_index :articles, :submission_id
+    add_index :articles, :status
   end
 
   def self.down
