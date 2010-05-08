@@ -1,14 +1,23 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.find_for_frontpage(:limit => 10)
+    @articles = Article.find(:all)
     respond_to do |format|
       format.html
       format.xml  { render :xml => @articles }
     end
   end
 
+  def frontpage
+    @articles = Article.find_for_frontpage(:limit => 8)
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @articles }
+    end
+  end
+
+
   def unposted
-    @articles = Article.find_all_by_status('unposted')
+    @articles = Article.find_all_by_is_posted(false)
     respond_to do |format|
       format.html
       format.xml  { render :xml => @articles }
@@ -29,6 +38,9 @@ class ArticlesController < ApplicationController
     when 'Update'
       @article.update_attributes(params[:article])
       redirect_to(:unposted_articles) and return
+    when 'Unpost'
+      @article.unpost
+      redirect_to(:articles) and return
     when 'Update and Post'
       if @article.post(params[:article])
         flash[:notice] = "Article Posted"

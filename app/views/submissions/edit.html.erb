@@ -1,25 +1,43 @@
 <% form_for(@submission) do |f| %>
-  <div class="submission_show">
-    <span class="submission_label">Title:</span><br />
-    <%= @submission.title %><br /><br />
-    <span class="submission_label">URL:</span><br />
-    <%= link_to @submission.url %><br /> <br />
-    <span class="submission_label">Description:</span><br />
-    <%= @submission.description %><br /> <br />
-    <span class="submission_label">Submitter:</span><br />
-    <%= @submission.submitter %><br /> <br />
-    <span class="submission_label">Submitted:</span><br />
-    <%= distance_of_time_in_words_to_now(@submission.created_at).capitalize %> ago <br /> <br />
-    <span class="submission_label">Method:</span><br />
-    <%= @submission.method.capitalize %><br /> <br />
-  </div>
-  
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :url, 'URL' %>
+    <span class="helptext">
+    (link to the "Print" version of the article, if possible)
+    </span>
+    <br />
+    <%= f.text_field :url, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :description, "Short Description" %>
+    <span class="helptext">(100 words or less)</span><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :submitter, "Submitter" %><br />
+    <%= f.text_field :submitter, :size => 42 %>
+  </p>
+
+  <p>
+    <%= f.label :created_at, "Submitted" %><br />
+    <span class="immutable_info">
+    <%= distance_of_time_in_words_to_now(@submission.created_at).capitalize %> ago
+    </span>
+  </p>
+
   <% if @submission.status == 'undecided' %>
     <%= f.submit "Approve" %>
     <%= f.submit "Reject" %>
+    <%= link_to "Cancel", submissions_path %>
   <% else %>
-    <span class="submission_label">Status:</span><br />
-    <%= @submission.status.capitalize %><br /><br />
+    <p>
+      <%= f.label :status %><br />
+      <span class="immutable_info"><%= @submission.status.capitalize %></span>
+    </p>
+    <%= link_to "Return to Submissions", submissions_path %>
   <% end %>
-
 <% end %>

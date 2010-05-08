@@ -1,25 +1,17 @@
-<div class="articles">
-  <% @articles.each do |article| %>
-    <div class="article">
-      <div class="article_title"><%= link_to article.title, article.url %></div>
-      <div class="article_attribution">
-
-        <%= article.author %> |
-        <%= article.source %> |
-        <%= article.publication_date %>
-      </div>
-      <div class="article_description"><%= article.description %></div>
-      <div class="article_footer">
-        <div class="article_metadata">
-          <div class="article_created_at"><%= distance_of_time_in_words_to_now(article.created_at) %> ago</div>
-        </div>
-        <div class="article_read_later">
-          <script>
-           instapaper_embed("<%= article.url %>", "<%= article.title %> [theiropinion.org]", "") 
-          </script>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
+<table>
+<thead>
+  <tr>
+    <td>Title</td>
+    <td>Created</td>
+    <td>Posted?</td>
+  </tr>
+</thead>
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= link_to article.title, article.url %></td>
+    <td><%= distance_of_time_in_words_to_now(article.created_at) %> ago</td>
+    <td><%= article.is_posted %></td>
+    <td><%= link_to "Edit", edit_article_path(article), :class => :action_link %></td>
+  </tr>
+<% end %>
+</table>

@@ -3,7 +3,7 @@ body {
   color: black;
   background-color: white;
   font-family: sans-serif;
-  margin: 0.5em;
+  margin: 1em;
   padding: 0px;
 }
 
@@ -17,6 +17,9 @@ body a {
 
 body a:hover {
   text-decoration: underline; 
+}
+
+.articles {
 }
 
 .toolbar {
@@ -34,12 +37,18 @@ body a:hover {
   font-size: 0.75em;
 }
 
+.immutable_info {
+  color: #777777;
+}
+
 .article {
   border-color: #cccccc;
   border-width: 1px;
   border-style: solid;
-  width: 25%;
-  padding: 0.5em;
+  width: 20em;
+  height: 10em;
+  padding: 0em 1em 1em 1em;
+  margin: 1em;
 }
 
 .article a {
@@ -47,14 +56,13 @@ body a:hover {
   color: black;
 }
 
-
-.article_attribution {
-  color: #777777;
-  font-size: 0.75em;
-  padding-bottom: 0.50em;
+.article_body {
 }
 
-.submission_label {
+.article_title {
+}
+
+.article_attribution {
   color: #777777;
   font-size: 0.75em;
   padding-bottom: 0.50em;
@@ -72,8 +80,9 @@ body a:hover {
 }
 
 .article_footer {
+  position: relative;
+  top: 150px;
   padding-bottom: 0.75em;
-
 }
 
 .article_created_at {
@@ -82,6 +91,14 @@ body a:hover {
 
 .article_read_later {
   float: right;
+}
+
+.article_column0 {
+  float: left;
+}
+
+.article_column1 {
+  float: left;
 }
 
 .footer {

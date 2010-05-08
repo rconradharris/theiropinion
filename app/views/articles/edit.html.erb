@@ -1,27 +1,57 @@
+
+
+
+
 <% form_for(@article) do |f| %>
   <%= f.error_messages %>
-  <div class="article_edit">
-    <span class="article_label">Title:</span><br />
-    <%= f.text_field :title, :size => 42 %><br /><br />
-    <span class="article_label">URL:</span><br />
-    <%= f.text_field :url, :size => 42 %><br /><br />
-    <span class="article_label">Description:</span><br />
-    <%= f.text_area :description %><br /><br />
 
-    <span class="article_label">Author:</span><br />
-    <%= f.text_field :author %><br /><br />
+  <p>
+    <%= f.label :url, 'URL' %>
+    <span class="helptext">
+    (link to the "Print" version of the article, if possible)
+    </span>
+    <br />
+    <%= f.text_field :url, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :description, "Short Description" %>
+    <span class="helptext">(100 words or less)</span><br />
+    <%= f.text_area :description, :size => "42x10" %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :source %><br />
+    <%= f.text_field :source, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :publication_date %><br />
+    <%= f.text_field :publication_date, :size => 10 %>
+  </p>
 
-    <span class="article_label">Source:</span><br />
-    <%= f.text_field :source %><br /><br />
+  <p>
+    <%= f.label :created_at, "Created" %><br />
+    <span class="immutable_info">
+    <%= distance_of_time_in_words_to_now(@article.created_at).capitalize %> ago
+    </span>
+  </p>
 
-    <span class="article_label">Publication Date:</span><br />
-    <%= f.text_field :publication_date %><br /><br />
-
-    <span class="article_label">Approved:</span><br />
-    <%= distance_of_time_in_words_to_now(@article.created_at).capitalize %> ago <br /> <br />
-  </div>
-
+  <p>
+    <%= f.label :is_posted, "Posted?" %><br />
+    <span class="immutable_info"><%= @article.is_posted %> </span>
+  </p>
 
   <%= f.submit "Update" %>
-  <%= f.submit "Update and Post" %>
+  <% if @article.is_posted  %>
+    <%= f.submit "Unpost" %>
+  <% else %>
+    <%= f.submit "Update and Post" %>
+  <% end %>
+  <%= link_to "Cancel", articles_path %>
 <% end %>
