@@ -1,14 +1,18 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.find(:all)
+  before_filter :login_required, :except => [ :frontpage ]
+
+  # Public pages
+  def frontpage
+    @articles = Article.find_for_frontpage(:limit => 8)
     respond_to do |format|
       format.html
       format.xml  { render :xml => @articles }
     end
   end
 
-  def frontpage
-    @articles = Article.find_for_frontpage(:limit => 8)
+  # Admin pages
+  def index
+    @articles = Article.find(:all)
     respond_to do |format|
       format.html
       format.xml  { render :xml => @articles }
