@@ -5,7 +5,7 @@ class SubmissionsController < ApplicationController
   def new
     @submission = Submission.new
     respond_to do |format|
-      format.html
+      format.html { render :layout => 'public' }
       format.xml  { render :xml => @submission }
     end
   end

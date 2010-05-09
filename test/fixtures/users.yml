@@ -1,0 +1,9 @@
+rick:
+  id:                        1
+  login:                     rick
+  email:                     rconradharris@gmail.com
+  salt:                      f03f113cdcf37dde451b7eefaab028639c03375e
+  crypted_password:          0a11ce86de08a499eb6a31971b4c3e22e487122c # rickrick
+  created_at:                <%= 1.days.ago.to_s :db %>
+
+

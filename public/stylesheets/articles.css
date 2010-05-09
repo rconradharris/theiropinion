@@ -1,3 +1,25 @@
+.too_logo {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  letter-spacing: -3px;
+  word-spacing: -10px;
+
+}
+
+.too_logo_faded {
+  color: #cccccc;
+}
+
+.too_logo_dot {
+  color: #cccccc;
+  font-size: 0.50em;
+}
+
+.too_logo_emphasized {
+  color: #e38d15; 
+}
+
 
 body {
   color: black;
@@ -12,7 +34,7 @@ body a {
 }
 
 .action_link {
-  color: orange;
+  color: #e38d15; 
 }
 
 body a:hover {
@@ -31,6 +53,12 @@ body a:hover {
   text-decoration: none; 
   color: #777777;
 }
+
+.toolbar a:hover {
+  text-decoration: none; 
+  color: #e38d15; 
+}
+
 
 .helptext {
   color: #777777;
@@ -103,6 +131,6 @@ body a:hover {
 
 .footer {
   padding-top: 2em;
-  color: #aaaaaa;
+  color: #cccccc;
   font-size: 0.75em;
 }

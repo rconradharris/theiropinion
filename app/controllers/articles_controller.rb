@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def frontpage
     @articles = Article.find_for_frontpage(:limit => 8)
     respond_to do |format|
-      format.html
+      format.html { render :layout => 'public' }
       format.xml  { render :xml => @articles }
     end
   end
