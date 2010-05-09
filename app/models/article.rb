@@ -7,12 +7,6 @@ class Article < ActiveRecord::Base
                       :with => /^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$/,
                       :if => :is_posted?
 
-  def Article.find_for_frontpage(opts={})
-    opts[:limit] ||= 10
-    Article.find(:all, :conditions => { :is_posted => true },
-                       :limit => opts[:limit])
-  end
-
   def post(attrs={})
     self.is_posted = true
     

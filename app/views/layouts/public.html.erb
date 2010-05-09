@@ -21,12 +21,12 @@
   </div>
   <div class="toolbar">
     <%= link_to "submit", new_submission_path %> |
-    <%= link_to "contact", new_submission_path %> |
+    <%= link_to "contact", new_note_path %> |
     <%= link_to "about", about_path %>
 
   </div>
 </div>
-<p style="color: green"><%= flash[:notice] %></p>
+<p class="flash_notice"><%= flash[:notice] %></p>
 
 <%= yield  %>
 

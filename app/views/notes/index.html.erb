@@ -1,0 +1,21 @@
+<table>
+<thead>
+  <tr>
+    <td>Subject</td>
+    <td>Submitter</td>
+    <td>Submitted</td>
+    <td>Read?</td>
+  </tr>
+</thead>
+<% @notes.each do |note| %>
+  <tr>
+    <td><%= note.subject %></td>
+    <td><%= note.submitter %></td>
+    <td><%= distance_of_time_in_words_to_now(note.created_at) %> ago</td>
+    <td><%= note.is_read.to_s.capitalize %></td>
+    <td><%= link_to "Edit",
+                    edit_note_path(note),
+                    :class => :action_link %></td>
+  </tr>
+<% end %>
+</table>

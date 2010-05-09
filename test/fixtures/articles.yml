@@ -13,3 +13,85 @@ one:
   submission_id: nil
   is_posted: true
 
+two:
+  url: "http://www.thebigmoney.com/articles/judgments/2010/04/27/myth-sophisticated-investor"
+  title: "The Myth of the Sophisticated Investor"
+  description: "Ms. Moore takes exception with the notion that Goldman Sachs,
+  and indeed Wall Street, is only wheeling and dealing on a level-playing feel
+  with other big investment firms."
+  author: "Heidi N. Moore"
+  source: "The Big Money"
+  publication_date: "2010-4-27"
+  submission_id: nil
+  is_posted: true
+
+three:
+  url: "http://www.chrismartenson.com/forum/why-peak-oil-will-never-lead-500bbl-crude-oil/38937"
+  title: 'Why "Peak Oil" Will Never Lead to $500-a-barrel Crude Oil'
+  description: "Lorum Ipsum"
+  author: "Erik Townsend"
+  source: "ChrisMartenson.com"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+four:
+  url: "http://abcnews.go.com/print?id=10523213"
+  title: 'The Appalling Reaction to the Apple iPhone Leak'
+  description: "Lorum Ipsum"
+  author: "Michael Malone"
+  source: "ABCNews"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+five:
+  url: "http://www.yahoo.com"
+  title: 'Lorum Ipsum'
+  description: "Lorum Ipsum"
+  author: "John Doe"
+  source: "This Week in Snooty"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+six:
+  url: "http://www.yahoo.com"
+  title: 'Lorum Ipsum'
+  description: "Lorum Ipsum"
+  author: "John Doe"
+  source: "This Week in Snooty"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+seven:
+  url: "http://www.yahoo.com"
+  title: 'Lorum Ipsum'
+  description: "Lorum Ipsum"
+  author: "John Doe"
+  source: "This Week in Snooty"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+eight:
+  url: "http://www.yahoo.com"
+  title: 'Lorum Ipsum'
+  description: "Lorum Ipsum"
+  author: "John Doe"
+  source: "This Week in Snooty"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+
+nine:
+  url: "http://www.yahoo.com"
+  title: 'Lorum Ipsum'
+  description: "Lorum Ipsum"
+  author: "John Doe"
+  source: "This Week in Snooty"
+  publication_date: "2010-5-2"
+  submission_id: nil
+  is_posted: true
+

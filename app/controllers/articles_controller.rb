@@ -2,8 +2,11 @@ class ArticlesController < ApplicationController
   before_filter :login_required, :except => [ :frontpage ]
 
   # Public pages
-  def frontpage
-    @articles = Article.find_for_frontpage(:limit => 8)
+  def frontpage(page_size=8)
+    page = params[:page].to_i || 0
+    @articles = Article.find_all_by_is_posted(
+      true, :limit => page_size, :offset => page * page_size)
+    @next_page = page + 1
     respond_to do |format|
       format.html { render :layout => 'public' }
       format.xml  { render :xml => @articles }
@@ -18,7 +21,6 @@ class ArticlesController < ApplicationController
       format.xml  { render :xml => @articles }
     end
   end
-
 
   def unposted
     @articles = Article.find_all_by_is_posted(false)

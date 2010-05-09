@@ -11,12 +11,20 @@
 </head>
 <body>
 <div class="header">
-  <%= link_to image_tag('too_large_logo.jpg'), frontpage_articles_path %>
+  <div class="too_logo"
+       onclick="location.href='<%= frontpage_articles_path %>';" style="cursor:pointer;" 
+  >
+    <span class="too_logo_faded">their</span>
+    <span class="too_logo_emphasized">opinion</span>
+    <span class="too_logo_dot">.</span>
+    <span class="too_logo_faded">org</span>
+  </div>
   <div class="toolbar">
     <%= link_to "submit", new_submission_path %> |
-    <%= link_to "articles", articles_path %> |
-    <%= link_to "submissions", submissions_path %> |
-    <%= link_to "unposted", unposted_articles_path %>
+    <%= link_to "all articles", articles_path %> |
+    <%= link_to "untriaged submissions", submissions_path %> |
+    <%= link_to "unposted articles", unposted_articles_path %> |
+    <%= link_to "unread notes", unread_notes_path %>
   </div>
 </div>
 <p style="color: green"><%= flash[:notice] %></p>

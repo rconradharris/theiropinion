@@ -31,12 +31,21 @@ class SubmissionsController < ApplicationController
 
   # Private pages
   def index
-    @submissions = Submission.find_for_triage
+    @submissions = Submission.find(:all)
     respond_to do |format|
       format.html
       format.xml  { render :xml => @submissions }
     end
   end
+
+  def untriaged
+    @submissions = Submission.find_for_triage
+    respond_to do |format|
+      format.html { render :template => 'submissions/index' }
+      format.xml  { render :xml => @submissions }
+    end
+  end
+
 
   def edit
     @submission = Submission.find(params[:id])

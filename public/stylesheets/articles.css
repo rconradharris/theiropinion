@@ -33,19 +33,39 @@ body a {
   color: black;
 }
 
-.action_link {
-  color: #e38d15; 
-}
 
 body a:hover {
   text-decoration: underline; 
 }
 
+.bottom_toolbar {
+  margin-top: 1em;
+}
+
+a.action_link {
+  text-decoration: none;
+  font-size: 1.25em;
+  color: #777777;
+
+  border-color: #cccccc;
+  border-width: 1px;
+  border-style: solid;
+
+  padding: 0.25em;
+
+}
+
+a.action_link:hover {
+  text-decoration: none;
+  color: #e38d15; 
+}
+
+
 .articles {
 }
 
 .toolbar {
-  font-size: 0.75em;
+  font-size: 1.25em;
   color: #777777;
 }
 
@@ -76,7 +96,8 @@ body a:hover {
   width: 20em;
   height: 10em;
   padding: 0em 1em 1em 1em;
-  margin: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .article a {
@@ -133,4 +154,8 @@ body a:hover {
   padding-top: 2em;
   color: #cccccc;
   font-size: 0.75em;
+}
+
+.flash_notice {
+  color: #e38d15; 
 }
