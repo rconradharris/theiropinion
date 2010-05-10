@@ -20,6 +20,6 @@ production:
   database: theiropinion_production
   pool: 5
   timeout: 5000
-  socket: /var/run/mysql.sock
-  user: test # FIXME: change before going live (ax user)
+  socket: /var/run/mysqld/mysqld.sock
+  username: test # FIXME: change before going live (ax user)
   password: test
