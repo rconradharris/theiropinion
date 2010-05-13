@@ -1,7 +1,7 @@
 ---
 user: deploy
 group: deploy
-chdir: /var/www/theiropinion
+chdir: /var/www/theiropinion/current
 log: log/thin.log
 port: 3000
 environment: production
