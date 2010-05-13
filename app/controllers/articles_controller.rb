@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  # Public pages
-  def frontpage(page_size=8)
+  def index
+    page_size = params[:page_size] ? params[:page_size].to_i : 8
     page = params[:page] ? params[:page].to_i : 1
 
     # ask for one extra so we know whether to display More link
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @articles }
     end
   end

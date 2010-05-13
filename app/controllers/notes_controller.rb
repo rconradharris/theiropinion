@@ -2,13 +2,12 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @note }
     end
   end
 
   def create
-    # Redirect back to articles page (or to thank you page)
     @note = Note.new(params[:note])
     @note.method = "web"
     respond_to do |format|

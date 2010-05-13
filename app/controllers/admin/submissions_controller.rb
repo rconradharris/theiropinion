@@ -1,11 +1,8 @@
-class Admin::SubmissionsController < ApplicationController
-  before_filter :login_required, :except => [ :new, :create ]
-
-  # Public pages
+class Admin::SubmissionsController < Admin::AdminController
   def new
     @submission = Submission.new
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @submission }
     end
   end
@@ -29,7 +26,6 @@ class Admin::SubmissionsController < ApplicationController
     end
   end
 
-  # Private pages
   def index
     @submissions = Submission.find(:all)
     respond_to do |format|

@@ -1,11 +1,8 @@
-class Admin::NotesController < ApplicationController
-  before_filter :login_required, :except => [ :new, :create ]
-
-  # Public pages
+class Admin::NotesController < Admin::AdminController
   def new
     @note = Note.new
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @note }
     end
   end
@@ -29,7 +26,6 @@ class Admin::NotesController < ApplicationController
     end
   end
 
-  # Private pages
   def index
     @notes = Note.find(:all)
     respond_to do |format|
@@ -41,7 +37,7 @@ class Admin::NotesController < ApplicationController
   def unread
     @notes = Note.find_for_triage
     respond_to do |format|
-      format.html { render :template => 'notes/index' }
+      format.html { render :template => 'admin/notes/index' }
       format.xml  { render :xml => @notes }
     end
   end

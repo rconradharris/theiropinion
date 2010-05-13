@@ -2,13 +2,12 @@ class SubmissionsController < ApplicationController
   def new
     @submission = Submission.new
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @submission }
     end
   end
 
   def create
-    # Redirect back to articles page (or to thank you page)
     @submission = Submission.new(params[:submission])
     @submission.method = "web"
     respond_to do |format|

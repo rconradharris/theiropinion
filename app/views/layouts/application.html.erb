@@ -12,7 +12,7 @@
 <body>
 <div class="header">
   <div class="too_logo"
-       onclick="location.href='<%= frontpage_articles_path %>';" style="cursor:pointer;" 
+       onclick="location.href='<%= root_path %>';" style="cursor:pointer;" 
   >
     <span class="too_logo_faded">their</span>
     <span class="too_logo_emphasized">opinion</span>
@@ -20,14 +20,13 @@
     <span class="too_logo_faded">org</span>
   </div>
   <div class="toolbar">
-    <%= link_to "submit", new_admin_submission_path %> |
-    <%= link_to "all articles", admin_articles_path %> |
-    <%= link_to "untriaged submissions", admin_submissions_path %> |
-    <%= link_to "unposted articles", unposted_admin_articles_path %> |
-    <%= link_to "unread notes", unread_admin_notes_path %>
+    <%= link_to "submit", submit_path %> |
+    <%= link_to "contact", contact_path %> |
+    <%= link_to "about", about_path %>
+
   </div>
 </div>
-<p style="color: green"><%= flash[:notice] %></p>
+<p class="flash_notice"><%= flash[:notice] %></p>
 
 <%= yield  %>
 

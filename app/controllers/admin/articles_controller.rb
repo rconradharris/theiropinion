@@ -1,7 +1,4 @@
-class Admin::ArticlesController < ApplicationController
-  before_filter :login_required, :except => [ :frontpage ]
-
-  # Public pages
+class Admin::ArticlesController < Admin::AdminController
   def frontpage(page_size=8)
     page = params[:page] ? params[:page].to_i : 1
 
@@ -15,12 +12,11 @@ class Admin::ArticlesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :layout => 'public' }
+      format.html
       format.xml  { render :xml => @articles }
     end
   end
 
-  # Admin pages
   def index
     @articles = Article.find(:all)
     respond_to do |format|

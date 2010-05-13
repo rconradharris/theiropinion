@@ -32,7 +32,7 @@
 </div>
 <% if @next_page %>
 <div class="bottom_toolbar">
-  <%= link_to "more", frontpage_articles_path(:page => @next_page),
+  <%= link_to "more", frontpage_admin_articles_path(:page => @next_page),
               :class => :action_link %>
 </div>
 <% end %>
