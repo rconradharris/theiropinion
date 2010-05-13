@@ -1,0 +1,38 @@
+<div class="articles">
+  <% @articles.each_with_index do |article, idx| %>
+    <div class="article article_column<%= idx % 2 %>">
+      <div class="article_footer">
+        <div class="article_metadata">
+          <div class="article_created_at">
+            <%= distance_of_time_in_words_to_now(article.created_at) %> ago
+          </div>
+        </div>
+        <div class="article_read_later">
+          <script>
+           instapaper_embed("<%= article.url %>",
+                            "<%= article.title %> [theiropinion.org]", "") 
+          </script>
+        </div>
+      </div>
+      <div class="article_body">
+        <div style="clear: both"></div>
+        <div class="article_title">
+          <%= link_to article.title, article.url %>
+        </div>
+        <div class="article_attribution">
+          <%= article.author %> |
+          <%= article.source %> |
+          <%= article.publication_date %>
+        </div>
+        <div class="article_description"><%= article.description %></div>
+      </div>
+    </div>
+  <% end %>
+  <br style="clear: both" />
+</div>
+<% if @next_page %>
+<div class="bottom_toolbar">
+  <%= link_to "more", frontpage_articles_path(:page => @next_page),
+              :class => :action_link %>
+</div>
+<% end %>

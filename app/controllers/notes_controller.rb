@@ -1,7 +1,4 @@
 class NotesController < ApplicationController
-  before_filter :login_required, :except => [ :new, :create ]
-
-  # Public pages
   def new
     @note = Note.new
     respond_to do |format|
@@ -18,53 +15,14 @@ class NotesController < ApplicationController
       if @note.save
         # TODO: Rotate this phrase in different languages
         flash[:notice] = "Thanks for the note!"
-        format.html { redirect_to :frontpage_articles }
+        format.html { redirect_to :root }
         format.xml  { render :xml => @note, :status => :created,
-                      :location => @note }
+                             :location => @note }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @note.errors,
-                      :status => :unprocessable_entity }
+                             :status => :unprocessable_entity }
       end
     end
   end
-
-  # Private pages
-  def index
-    @notes = Note.find(:all)
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @notes }
-    end
-  end
-
-  def unread
-    @notes = Note.find_for_triage
-    respond_to do |format|
-      format.html { render :template => 'notes/index' }
-      format.xml  { render :xml => @notes }
-    end
-  end
-
-
-  def edit
-    @note = Note.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @note }
-    end
-  end
-
-  def update
-    @note = Note.find(params[:id])
-    case params[:commit]
-    when 'Mark Read'
-      @note.mark_read
-    else
-      raise Exception, "unknown action"
-    end
-    redirect_to :unread_notes
-  end
-
-
 end

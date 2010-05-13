@@ -1,7 +1,4 @@
 class SubmissionsController < ApplicationController
-  before_filter :login_required, :except => [ :new, :create ]
-
-  # Public pages
   def new
     @submission = Submission.new
     respond_to do |format|
@@ -18,57 +15,14 @@ class SubmissionsController < ApplicationController
       if @submission.save
         # TODO: Rotate this phrase in different languages
         flash[:notice] = "Thanks for the submission!"
-        format.html { redirect_to :articles }
+        format.html { redirect_to :root }
         format.xml  { render :xml => @submission, :status => :created,
-                    :location => @submission }
+                             :location => @submission }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @submission.errors,
-                    :status => :unprocessable_entity }
+                             :status => :unprocessable_entity }
       end
     end
   end
-
-  # Private pages
-  def index
-    @submissions = Submission.find(:all)
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @submissions }
-    end
-  end
-
-  def untriaged
-    @submissions = Submission.find_for_triage
-    respond_to do |format|
-      format.html { render :template => 'submissions/index' }
-      format.xml  { render :xml => @submissions }
-    end
-  end
-
-
-  def edit
-    @submission = Submission.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @submission }
-    end
-  end
-
-  def update
-    @submission = Submission.find(params[:id])
-    case params[:commit]
-    when 'Approve'
-      @submission.approve
-    when 'Reject'
-      @submission.reject
-    else
-      raise Exception, "unknown action"
-    end
-    redirect_to :submissions
-  end
-
-
-
-
 end

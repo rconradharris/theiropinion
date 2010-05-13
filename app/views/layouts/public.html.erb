@@ -12,7 +12,7 @@
 <body>
 <div class="header">
   <div class="too_logo"
-       onclick="location.href='<%= frontpage_articles_path %>';" style="cursor:pointer;" 
+       onclick="location.href='<%= root_path %>';" style="cursor:pointer;" 
   >
     <span class="too_logo_faded">their</span>
     <span class="too_logo_emphasized">opinion</span>
@@ -20,8 +20,8 @@
     <span class="too_logo_faded">org</span>
   </div>
   <div class="toolbar">
-    <%= link_to "submit", new_submission_path %> |
-    <%= link_to "contact", new_note_path %> |
+    <%= link_to "submit", submit_path %> |
+    <%= link_to "contact", contact_path %> |
     <%= link_to "about", about_path %>
 
   </div>

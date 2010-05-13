@@ -1,0 +1,34 @@
+<p class="helptext">
+Comments or suggestions are welcome!
+</p>
+<% form_for(@note) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :body, "Body" %>
+    <br />
+    <%= f.text_area :body, :size => "42x10" %>
+  </p>
+  <p>
+    <%= f.label :submitter, "Your Name" %>
+    <br />
+
+    <%= f.text_field :submitter, :size => 42 %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <span class="helptext">
+     (will be kept private)
+    </span>
+    <br />
+    <%= f.text_field :email, :size => 42 %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
+

@@ -20,11 +20,11 @@
     <span class="too_logo_faded">org</span>
   </div>
   <div class="toolbar">
-    <%= link_to "submit", new_submission_path %> |
-    <%= link_to "all articles", articles_path %> |
-    <%= link_to "untriaged submissions", submissions_path %> |
-    <%= link_to "unposted articles", unposted_articles_path %> |
-    <%= link_to "unread notes", unread_notes_path %>
+    <%= link_to "submit", new_admin_submission_path %> |
+    <%= link_to "all articles", admin_articles_path %> |
+    <%= link_to "untriaged submissions", admin_submissions_path %> |
+    <%= link_to "unposted articles", unposted_admin_articles_path %> |
+    <%= link_to "unread notes", unread_admin_notes_path %>
   </div>
 </div>
 <p style="color: green"><%= flash[:notice] %></p>
