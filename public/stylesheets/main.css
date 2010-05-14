@@ -147,3 +147,25 @@ a.action_link {
 .flash_notice {
   color: #e38d15; 
 }
+
+.minipage {
+  width: 25em;
+}
+
+.minipage h1 {
+  color: #cccccc;
+}
+
+.minipage h2 {
+  color: #cccccc;
+}
+
+.minipage a {
+  text-decoration: underline;
+  color: black;
+}
+
+.minipage a:hover {
+  text-decoration: underline;
+  color: black;
+}
