@@ -11,21 +11,23 @@
 </head>
 <body>
 <div class="header">
+  <div class="tagbar">
+    <%= linky_tags(Tag.find_for_tagbar) %>
+  </div>
+
   <div class="too_logo"
-       onclick="location.href='<%= root_path %>';" style="cursor:pointer;" 
-  >
-    <span class="too_logo_faded">their</span>
-    <span class="too_logo_emphasized">opinion</span>
-    <span class="too_logo_dot">.</span>
-    <span class="too_logo_faded">org</span>
+       onclick="location.href='<%= root_path %>';"
+       style="cursor:pointer;">
+    their<em>opinion</em><span class="too_logo_dot">.</span>org
   </div>
   <div class="toolbar">
     <%= link_to "submit", submit_path %> |
     <%= link_to "contact", contact_path %> |
     <%= link_to "about", about_path %>
-
   </div>
 </div>
+
+
 <p class="flash_notice"><%= flash[:notice] %></p>
 
 <%= yield  %>

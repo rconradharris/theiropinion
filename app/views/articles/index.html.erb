@@ -3,8 +3,8 @@
     <div class="article article_column<%= idx % 2 %>">
       <div class="article_footer">
         <div class="article_metadata">
-          <div class="article_created_at">
-            <%= distance_of_time_in_words_to_now(article.created_at) %> ago
+          <div class="article_tags">
+            <%= linky_tags(article.tags) %>
           </div>
         </div>
         <div class="article_read_later">
@@ -22,7 +22,7 @@
         <div class="article_attribution">
           <%= article.author %> |
           <%= article.source %> |
-          <%= article.publication_date %>
+          <%= pub_date(article.publication_date) %>
         </div>
         <div class="article_description"><%= article.description %></div>
       </div>
@@ -32,7 +32,7 @@
 </div>
 <% if @next_page %>
 <div class="bottom_toolbar">
-  <%= link_to "more", articles_path(:page => @next_page),
+  <%= link_to "more", root_path(:page => @next_page),
               :class => :action_link %>
 </div>
 <% end %>

@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+rubin:
+  id: 1
   url: "http://www.slate.com/toolbar.aspx?action=print&id=2252363"
   title: "In Defense of Robert Rubin"
   description: "Seldom does a Sunday pass of late without Frank Rich, the New
@@ -12,7 +13,7 @@ one:
   publication_date: "2010-5-1"
   submission_id: nil
   is_posted: true
-
+  tags: economics, politics
 two:
   url: "http://www.thebigmoney.com/articles/judgments/2010/04/27/myth-sophisticated-investor"
   title: "The Myth of the Sophisticated Investor"
@@ -24,6 +25,7 @@ two:
   publication_date: "2010-4-27"
   submission_id: nil
   is_posted: true
+  tags: economics
 
 three:
   url: "http://www.chrismartenson.com/forum/why-peak-oil-will-never-lead-500bbl-crude-oil/38937"
@@ -34,6 +36,7 @@ three:
   publication_date: "2010-5-2"
   submission_id: nil
   is_posted: true
+  tags: economics
 
 four:
   url: "http://abcnews.go.com/print?id=10523213"
@@ -44,6 +47,7 @@ four:
   publication_date: "2010-5-2"
   submission_id: nil
   is_posted: true
+  tags: technology
 
 five:
   url: "http://www.yahoo.com"
@@ -54,6 +58,7 @@ five:
   publication_date: "2010-5-2"
   submission_id: nil
   is_posted: true
+  tags: stub
 
 six:
   url: "http://www.yahoo.com"

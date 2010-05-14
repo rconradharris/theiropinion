@@ -12,12 +12,9 @@
 <body>
 <div class="header">
   <div class="too_logo"
-       onclick="location.href='<%= frontpage_admin_articles_path %>';" style="cursor:pointer;" 
-  >
-    <span class="too_logo_faded">their</span>
-    <span class="too_logo_emphasized">opinion</span>
-    <span class="too_logo_dot">.</span>
-    <span class="too_logo_faded">org</span>
+    onclick="location.href='<%= frontpage_admin_articles_path %>';"
+    style="cursor:pointer;">
+    their<em>opinion</em><span class="too_logo_dot">.</span>org/admin
   </div>
   <div class="toolbar">
     <%= link_to "submit", new_admin_submission_path %> |
