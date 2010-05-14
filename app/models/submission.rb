@@ -7,7 +7,6 @@ class Submission < ActiveRecord::Base
 
   def Submission.find_for_triage
     Submission.find(:all, :conditions => { :status => "undecided" })
-    Submission.find(:all)
   end
 
   def approve

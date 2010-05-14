@@ -1,10 +1,5 @@
-
-
-
-
-<% form_for(@article) do |f| %>
+<% form_for([:admin, @article]) do |f| %>
   <%= f.error_messages %>
-
   <p>
     <%= f.label :url, 'URL' %>
     <span class="helptext">
@@ -34,24 +29,26 @@
     <%= f.label :publication_date %><br />
     <%= f.text_field :publication_date, :size => 10 %>
   </p>
-
+  <p>
+    <%= f.label :tag_field, "Tags" %>
+    <span class="helptext">(<%= Tag.find_for_tagbar.join(', ') %>)</span><br />
+    <%= f.text_field :tag_field, :size => 42 %>
+  </p>
   <p>
     <%= f.label :created_at, "Created" %><br />
     <span class="immutable_info">
     <%= distance_of_time_in_words_to_now(@article.created_at).capitalize %> ago
     </span>
   </p>
-
   <p>
     <%= f.label :is_posted, "Posted?" %><br />
     <span class="immutable_info"><%= @article.is_posted %> </span>
   </p>
-
   <%= f.submit "Update" %>
   <% if @article.is_posted  %>
     <%= f.submit "Unpost" %>
   <% else %>
     <%= f.submit "Update and Post" %>
   <% end %>
-  <%= link_to "Cancel", articles_path %>
+  <%= link_to "Cancel", admin_articles_path %>
 <% end %>

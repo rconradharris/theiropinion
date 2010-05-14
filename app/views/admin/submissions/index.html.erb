@@ -14,7 +14,7 @@
     <td><%= distance_of_time_in_words_to_now(submission.created_at) %> ago</td>
     <td><%= submission.status.capitalize %></td>
     <td><%= link_to "Edit",
-                    edit_submission_path(submission),
+                    edit_admin_submission_path(submission),
                     :class => :action_link %></td>
   </tr>
 <% end %>

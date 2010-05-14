@@ -34,10 +34,10 @@ class Admin::SubmissionsController < Admin::AdminController
     end
   end
 
-  def untriaged
+  def triage
     @submissions = Submission.find_for_triage
     respond_to do |format|
-      format.html { render :template => 'submissions/index' }
+      format.html { render :template => 'admin/submissions/index' }
       format.xml  { render :xml => @submissions }
     end
   end
@@ -61,6 +61,6 @@ class Admin::SubmissionsController < Admin::AdminController
     else
       raise Exception, "unknown action"
     end
-    redirect_to :submissions
+    redirect_to :admin_submissions
   end
 end

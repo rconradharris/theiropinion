@@ -1,22 +1,4 @@
 class Admin::ArticlesController < Admin::AdminController
-  def frontpage(page_size=8)
-    page = params[:page] ? params[:page].to_i : 1
-
-    # ask for one extra so we know whether to display More link
-    @articles = Article.find_all_by_is_posted(
-      true, :limit => page_size + 1, :offset => (page-1) * page_size)
-
-    if @articles.length - page_size > 0
-      @articles.pop
-      @next_page = page + 1
-    end
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @articles }
-    end
-  end
-
   def index
     @articles = Article.find(:all)
     respond_to do |format|
@@ -46,14 +28,14 @@ class Admin::ArticlesController < Admin::AdminController
     case params[:commit]
     when 'Update'
       @article.update_attributes(params[:article])
-      redirect_to(:unposted_articles) and return
+      redirect_to(:unposted_admin_articles) and return
     when 'Unpost'
       @article.unpost
       redirect_to(:articles) and return
     when 'Update and Post'
       if @article.post(params[:article])
         flash[:notice] = "Article Posted"
-        redirect_to(:articles) and return
+        redirect_to(:admin_articles) and return
       else
         render :action => :edit
       end

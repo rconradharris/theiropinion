@@ -9,11 +9,13 @@ class Article < ActiveRecord::Base
                       :with => /^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$/,
                       :if => :is_posted?
 
-  def tagify(s)
-    s.split(',').each do |name|
-      tags << Tag.find_or_create_by_name(:name => name.strip)
-    end
-    save
+  def tag_field=(s)
+    names = s.split(',').map { |n| n.strip }.compact.uniq
+    self.tags = names.map { |name| Tag.find_or_create_by_name(name) }
+  end
+  
+  def tag_field
+    tags.join(', ')
   end
 
   def post(attrs={})

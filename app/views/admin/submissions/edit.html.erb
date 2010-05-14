@@ -1,4 +1,4 @@
-<% form_for(@submission) do |f| %>
+<% form_for([:admin, @submission]) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :url, 'URL' %>
@@ -38,6 +38,6 @@
       <%= f.label :status %><br />
       <span class="immutable_info"><%= @submission.status.capitalize %></span>
     </p>
-    <%= link_to "Return to Submissions", submissions_path %>
+    <%= link_to "Return to Submissions", admin_submissions_path %>
   <% end %>
 <% end %>

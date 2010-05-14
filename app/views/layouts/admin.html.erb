@@ -12,15 +12,17 @@
 <body>
 <div class="header">
   <div class="too_logo"
-    onclick="location.href='<%= frontpage_admin_articles_path %>';"
+    onclick="location.href='<%= admin_articles_path %>';"
     style="cursor:pointer;">
     their<em>opinion</em><span class="too_logo_dot">.</span>org/admin
   </div>
   <div class="toolbar">
     <%= link_to "submit", new_admin_submission_path %> |
+    <%= link_to "all subs", admin_submissions_path %> |
+    <%= link_to "triage subs", triage_admin_submissions_path %> |
     <%= link_to "all articles", admin_articles_path %> |
-    <%= link_to "untriaged submissions", admin_submissions_path %> |
-    <%= link_to "unposted articles", unposted_admin_articles_path %> |
+    <%= link_to "unposted", unposted_admin_articles_path %> |
+    <%= link_to "all notes", admin_notes_path %> |
     <%= link_to "unread notes", unread_admin_notes_path %> |
     <%= link_to "logout", logout_path %>
   </div>

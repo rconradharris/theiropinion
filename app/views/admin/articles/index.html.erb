@@ -11,7 +11,7 @@
     <td><%= link_to article.title, article.url %></td>
     <td><%= distance_of_time_in_words_to_now(article.created_at) %> ago</td>
     <td><%= article.is_posted %></td>
-    <td><%= link_to "Edit", edit_article_path(article), :class => :action_link %></td>
+    <td><%= link_to "Edit", edit_admin_article_path(article), :class => :action_link %></td>
   </tr>
 <% end %>
 </table>

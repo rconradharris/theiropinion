@@ -16,9 +16,9 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/admin/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/admin/login', :controller => 'sessions', :action => 'new'
   map.namespace :admin do |admin|
-    admin.resources :submissions, :collection => { :untriaged => :get }
+    admin.resources :submissions, :collection => { :triage => :get }
     admin.resources :articles,
-                    :collection => { :unposted => :get, :frontpage => :get }
+                    :collection => { :unposted => :get }
     admin.resources :notes, :collection => { :unread => :get }
   end
 

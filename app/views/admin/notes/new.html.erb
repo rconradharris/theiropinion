@@ -1,7 +1,7 @@
 <p class="helptext">
 Comments or suggestions are welcome!
 </p>
-<% form_for(@note) do |f| %>
+<% form_for([:admin, @note]) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :subject %><br />
