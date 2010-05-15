@@ -169,3 +169,13 @@ a.action_link {
   text-decoration: underline;
   color: black;
 }
+
+.error_box {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.error_heading {
+  font-size: 3em;
+  font-weight: bold;
+}
