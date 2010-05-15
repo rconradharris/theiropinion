@@ -15,7 +15,7 @@ class Admin::SubmissionsController < Admin::AdminController
       if @submission.save
         # TODO: Rotate this phrase in different languages
         flash[:notice] = "Thanks for the submission!"
-        format.html { redirect_to :frontpage_articles }
+        format.html { redirect_to :admin_articles }
         format.xml  { render :xml => @submission, :status => :created,
                       :location => @submission }
       else
