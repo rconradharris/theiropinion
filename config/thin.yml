@@ -5,5 +5,5 @@ chdir: /var/www/theiropinion/current
 log: log/thin.log
 port: 3000
 environment: production
-pid: tmp/pid/thin.pid
+pid: tmp/pids/thin.pid
 servers: 5
